@@ -19,8 +19,7 @@ description: "Contatos de Prestadores"
 
 Prezados amigos da **AsconPb**, abaixo segue alguns contatos de prestadores de serviços que podem vir a ser úteis para vocês. Vocês poderão pesquisar usando palavras chaves de forma a facilitar a busca. 
 
-**Observação**: Não usem acentuações na pesquisa.
-
+**Observação**: No campo **Pesquisa** ao topo da tabela pesquise por palavras chaves sem o uso de acentuação.
 
 ```{r, echo=FALSE}
 library(magrittr)
@@ -32,21 +31,28 @@ dados <-
     file = "banco_dados_contatos_condominio.csv", sep = ",") %>% 
   as_tibble()
 
-dados <- DT::datatable(dados, filter = "top",
-                       options = list(
-      dom = "Bfrtlip",
-      search = list(caseInsensitive = FALSE),
-      buttons =
-        list(list(extend = "copy", text = "Copiar"), list(extend = "print", text = "Imprimir"), list(
+dados <- DT::datatable(
+  dados,
+  filter = "top",
+  options = list(
+    dom = "Bfrtlip",
+    search = list(caseInsensitive = TRUE),
+    buttons =
+      list(
+        list(extend = "copy", text = "Copiar"),
+        list(extend = "print", text = "Imprimir"),
+        list(
           extend = "collection",
           buttons = c("csv", "excel", "pdf"),
           text = "Baixar"
-        )),
-      pageLength = 25L,
-      language = list(url = "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"),
-      lengthMenu = list(c(25, 50, 100, -1), c("25", "50", "100", "Todos")),
-      fixedHeader = TRUE
-    ))
+        )
+      ),
+    pageLength = 25L,
+    language = list(url = "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"),
+    lengthMenu = list(c(25, 50, 100, -1), c("25", "50", "100", "Todos")),
+    fixedHeader = TRUE
+  )
+)
 dados
 ```
 
