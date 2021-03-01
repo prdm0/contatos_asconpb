@@ -1,6 +1,6 @@
 --- 
 knit: "bookdown::render_book"
-title: "CONTRATOS DE PRESTADORES DE SERVIÇOS"
+title: "CONTATOS DE PRESTADORES DE SERVIÇOS"
 author: "Pedro Rafael D. Marinho"
 site: bookdown::bookdown_site
 documentclass: book
